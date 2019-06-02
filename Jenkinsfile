@@ -1,11 +1,9 @@
 pipeline {
     agent { label 'java-mvn-docker' }
     stages {
-        stage('Test') {
-            agent { dockerfile true }
+        stage('Test') {            
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                sh 'sudo docker build .'               
             }
         }
     }
